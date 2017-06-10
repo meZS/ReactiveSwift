@@ -1,6 +1,14 @@
 # master
 *Please add new entries at the top.*
 
+1. New operator: `diff`. (#444, kudos to @andersio)
+
+   `diff` computes the differences between two instances of a collection based on [Paul Heckel's diffing algorithm](http://documents.scribd.com/docs/10ro9oowpo1h81pgh1as.pdf) that generally takes linear time and O(n) space.
+
+   The differences are packed as a `CollectionDelta`, which contains relative positions of elements to which collection operations have been applied.
+
+   `diff` is available on `Signal`, `SignalProducer` and properties of collection.
+
 1. Mitigated a race condition related to ARC in the `Signal` internal. (#456, kudos to @andersio)
 
 1. Added new convenience initialisers to `Action` that make creating actions with state input properties easier. When creating an `Action` that is conditionally enabled based on an optional property, use the renamed `Action.init(unwrapping:execute:)` initialisers. (#455, kudos to @sharplet)
